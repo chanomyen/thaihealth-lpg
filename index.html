@@ -13,7 +13,7 @@
     <div class="container mt-3" style="max-width: 540px;">
         <div class="card">
             <div class="card-header" style="background-color: blanchedalmond;">
-                <h1 class="text-center">ลงทะเบียนผู้ประกอบอาชีพแกะสลักหิน</h1>
+                <h1 class="text-center">ประเมินความเสี่ยงผู้ประกอบอาชีพทำครกหิน</h1>
             </div>
             <div class="card-body">
                 <form>
@@ -63,6 +63,16 @@
                         </select>
                     </div>
                     <div class="input-group mb-3">
+                        <span for="weight" class="input-group-text">น้ำหนัก</span>
+                        <input type="number" class="form-control" id="weight" name="weight" value="" required>
+                        <span class="input-group-text">กิโลกรัม</span>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span for="height" class="input-group-text">ส่วนสูง</span>
+                        <input type="number" class="form-control" id="height" name="height" value="" required>
+                        <span class="input-group-text">เซนติเมตร</span>
+                    </div>
+                    <div class="input-group mb-3">
                         <span for="phone" class="input-group-text">โทรศัพท์</span>
                         <input type="number" class="form-control" id="phone" name="phone" value="" required>
                     </div>
@@ -107,29 +117,14 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="stonePond">
-                                        <label class="form-check-label" for="stonePond">ลงบ่อหิน</label>
+                                        <input class="form-check-input" type="checkbox" value="" id="drilling">
+                                        <label class="form-check-label" for="drilling">การขุดเจาะ</label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="cutStone">
-                                        <label class="form-check-label" for="cutStone">ตัดหิน</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="tockStone">
-                                        <label class="form-check-label" for="tockStone">ต๊อกหิน</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="ripStone">
-                                        <label class="form-check-label" for="ripStone">ผ่าหิน</label>
+                                        <label class="form-check-label" for="cutStone">การผ่าหิน/ตกแต่ง</label>
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +133,7 @@
                                 <div class="col">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="carveStone">
-                                        <label class="form-check-label" for="carveStone">แกะสลักหิน</label>
+                                        <label class="form-check-label" for="carveStone">ครกหิน</label>
                                     </div>
                                 </div>
                             </div>
@@ -165,7 +160,7 @@
                         <span for="work-days" class="input-group-text">วัน</span>
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text">ประสบการณ์ทำอาชีพแกะสลักหิน</span>
+                        <span class="input-group-text">ประสบการณ์อาชีพครกหิน</span>
                         <input type="text" class="form-control" id="experience" name="experience" value=0 required>
                         <span class="input-group-text">ปี</span>
                     </div>
@@ -181,9 +176,17 @@
                             <option value="อื่น ๆ">อื่น ๆ</option>
                         </select>
                     </div>
+                    <div class="input-group mb-3">
+                        <span for="nationality" class="input-group-text">อาการผิดปกติเกี่ยวกับหู</span>
+                        <select class="form-select" id="nationality" name="nationality" required>
+                            <option value="มีอาการ">มีอาการ</option>
+                            <option value="ไม่มีอาการ">ไม่มีอาการ</option>
+                        </select>
+                    </div>
                     <div class="input-group text-center">
                         <input type="checkbox" id="policyCheckbox" name="policyCheckbox" value=1>
-                        <label for="policyCheckbox">&nbsp;<a href="policy/policy.pdf">ยอมรับเงื่อนไขการใช้งาน</a> </label><br>
+                        <label for="policyCheckbox">&nbsp;<a href="policy/policy.pdf">ยอมรับเงื่อนไขการใช้งาน</a>
+                        </label><br>
                     </div>
                     <br>
                     <div class="d-grid gap-2">

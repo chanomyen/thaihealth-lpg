@@ -28,8 +28,7 @@ userRegisterForm.addEventListener('submit', async (event) => {
 
     formDataObject.isCutStone = document.getElementById("cutStone").checked;
     formDataObject.isStonePond = document.getElementById("stonePond").checked;
-    formDataObject.isTockStone = document.getElementById("tockStone").checked;
-    formDataObject.isRipStone = document.getElementById("ripStone").checked;
+    formDataObject.isTockStone = document.getElementById("drilling").checked;
     formDataObject.isCarveStone = document.getElementById("carveStone").checked;
     formDataObject.otherWorkTypeValue = otherWorkTypeValue;
 
@@ -104,7 +103,7 @@ async function isRegisted(userId) {
 function goToAssessmentPage() {
     let baseUrl = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
     if (baseUrl.includes("github")) {
-        baseUrl = `${baseUrl}/thaihealth`;
+        baseUrl = `${baseUrl}/thaihealth-lpg`;
     }
     const nextPage = `${baseUrl}/silicosis-risk-prediction.html`;
     console.log(nextPage);
@@ -114,12 +113,12 @@ function goToAssessmentPage() {
 window.onload = async function () {
     console.log("On load!!!")
     loadLIFF();
-    await liff.init({ liffId: "1660957751-q2MDKokx" });
+    await liff.init({ liffId: "2000015305-b6e21554" });
     if (liff.isLoggedIn()) {
         console.log("Logged In!");
     } else {
         console.log("Not logged In!");
-        liff.login();
+        // liff.login();
     }
 
     const profile = await liff.getProfile();
