@@ -27,7 +27,6 @@ userRegisterForm.addEventListener('submit', async (event) => {
     formDataObject.homeAddress = document.getElementById("homeAddress").value;
 
     formDataObject.isCutStone = document.getElementById("cutStone").checked;
-    formDataObject.isStonePond = document.getElementById("stonePond").checked;
     formDataObject.isTockStone = document.getElementById("drilling").checked;
     formDataObject.isCarveStone = document.getElementById("carveStone").checked;
     formDataObject.otherWorkTypeValue = otherWorkTypeValue;
@@ -36,13 +35,13 @@ userRegisterForm.addEventListener('submit', async (event) => {
     formDataObject.lineName = lineProfile.displayName;
 
     const json = JSON.stringify(formDataObject); // convert the FormData object to a JSON string
+    console.log("Form data: ");
     console.log(json);
-    console.log(formDataObject);
 
     submitBtn.innerHTML = "กำลังส่งข้อมูล...";
     submitBtn.disabled = true;
     submitBtn.className = "btn btn-info btn-lg";
-    const url = "https://asia-southeast1-thai-health-x.cloudfunctions.net/api/user/"
+    const url = "https://asia-southeast1-thai-health-x.cloudfunctions.net/apiLampang/lpg/user"
     fetch(url, {
         method: "POST",
         headers: {
@@ -91,7 +90,7 @@ function loadLIFF() {
 }
 
 async function isRegisted(userId) {
-    const url = `https://asia-southeast1-thai-health-x.cloudfunctions.net/api/user/?userId=${userId}`
+    const url = `https://asia-southeast1-thai-health-x.cloudfunctions.net/apiLampang/lpg/user/?userId=${userId}`
     return fetch(url, {
         method: "GET"
     })
@@ -111,18 +110,19 @@ function goToAssessmentPage() {
 }
 
 window.onload = async function () {
-    console.log("On load!!!")
+    // console.log("On load!!!")
     loadLIFF();
     await liff.init({ liffId: "2000015305-b6e21554" });
     if (liff.isLoggedIn()) {
         console.log("Logged In!");
     } else {
         console.log("Not logged In!");
-        // liff.login();
+        liff.login();
     }
 
     const profile = await liff.getProfile();
     lineProfile = profile;
+    console.log(lineProfile);
     isRegisted(lineProfile.userId)
         .then(data => {
             console.log(data.exists);
@@ -131,5 +131,8 @@ window.onload = async function () {
                 goToAssessmentPage();
             }
         })
-        .catch(error => console.error(error));
+        .catch((error) => {
+            console.log("Error");
+            console.error(error)
+        });
 };

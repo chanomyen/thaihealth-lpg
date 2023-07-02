@@ -20,7 +20,7 @@
                 <form id="silicosis_form">
                     <div class="input-group mb-3">
                         <span class="input-group-text">ส่วนสูง</span>
-                        <input type="number" step="0.001" class="form-control" id="height" name="height" required>
+                        <input type="number" class="form-control" id="height" name="height" required>
                         <span class="input-group-text">เซนติเมตร</span>
                     </div>
                     <div class="input-group mb-3">
@@ -29,15 +29,15 @@
                         <span for="work-hours" class="input-group-text">ชั่วโมง</span>
                     </div>
                     <div class="input-group mb-3">
-                        <span for="has-disease" class="input-group-text">อาการผิดปกติเกี่ยวกับหู</span>
-                        <select class="form-select" id="has_disease" name="has_disease" required>
+                        <span for="abnormal" class="input-group-text">อาการผิดปกติเกี่ยวกับหู</span>
+                        <select class="form-select" id="abnormal" name="abnormal" required>
                             <option value=0>ไม่มีอาการ</option>
                             <option value=1>มีอาการ</option>
                         </select>
                     </div>
                     <div class="input-group mb-3">
-                        <span for="work-location" class="input-group-text">ผลการตรวจวัดระดับเสียง</span>
-                        <select class="form-select" id="sound_level" name="sound_level" required>
+                        <span for="soundLevel" class="input-group-text">ผลการตรวจวัดระดับเสียง</span>
+                        <select class="form-select" id="soundLevel" name="soundLevel" required>
                             <option value="1">ไม่ผ่านมาตรฐาน</option>
                             <option value="2">ผ่านมาตรฐาน</option>
                         </select>
