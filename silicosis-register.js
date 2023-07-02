@@ -34,6 +34,7 @@ userRegisterForm.addEventListener('submit', async (event) => {
     formDataObject.lineId = lineProfile.userId;
     formDataObject.lineName = lineProfile.displayName;
 
+    console.log(formDataObject)
     const json = JSON.stringify(formDataObject); // convert the FormData object to a JSON string
 
     submitBtn.innerHTML = "กำลังส่งข้อมูล...";
