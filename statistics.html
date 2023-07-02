@@ -13,6 +13,46 @@
     <div class="container mt-3" style="max-width: 540px;">
         <div class="card text-center bg-transparent border-success" id="chartCard">
             <h1 class="card-header text-bg-success">ข้อมูลเชิงสถิติ</h1>
+            <div class="card-body border-success">
+                <h2><span class="badge text-bg-warning">ผลการตรวจวัดความดันเสียง</span></h2>
+                <h2><span class="badge text-bg-warning">ในสภาพแวดล้อมการทำงาน</span></h2>
+                <h2><span class="badge text-bg-warning">อ.เมือง จ.ลำปาง ตามลักษณะงาน</span></h2>
+                <div class="table-responsive">
+                    <table class="table align-middle table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col" rowspan="2">ตำแหน่งงาน</th>
+                                <th scope="col" colspan="3">ระดับความดันเสียง (dB(A))</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">สูงสุด</th>
+                                <th scope="col">ต่ำสุด</th>
+                                <th scope="col">เฉลี่ย</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>การขุดเจาะ</td>
+                                <td>102</td>
+                                <td>81</td>
+                                <td>95.09</td>
+                            </tr>
+                            <tr>
+                                <td>การผ่าหิน/ตกแต่ง</td>
+                                <td>102</td>
+                                <td>82</td>
+                                <td>98.26</td>
+                            </tr>
+                            <tr>
+                                <td>การแกะสลักหิน</td>
+                                <td>102</td>
+                                <td>64</td>
+                                <td>84.39</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <div class="card-body border-success" style="max-width: 268px; align-self: center;">
                 <h2><span class="badge text-bg-warning">เพศ</span></h2>
                 <canvas id="genderChart"></canvas>
