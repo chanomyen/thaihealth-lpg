@@ -26,17 +26,15 @@ userRegisterForm.addEventListener('submit', async (event) => {
 
     formDataObject.homeAddress = document.getElementById("homeAddress").value;
 
-    formDataObject.isCutStone = document.getElementById("cutStone").checked;
-    formDataObject.isTockStone = document.getElementById("drilling").checked;
-    formDataObject.isCarveStone = document.getElementById("carveStone").checked;
+    formDataObject.cutStone = document.getElementById("cutStone").checked;
+    formDataObject.drilling = document.getElementById("drilling").checked;
+    formDataObject.carveStone = document.getElementById("carveStone").checked;
     formDataObject.otherWorkTypeValue = otherWorkTypeValue;
 
     formDataObject.lineId = lineProfile.userId;
     formDataObject.lineName = lineProfile.displayName;
 
     const json = JSON.stringify(formDataObject); // convert the FormData object to a JSON string
-    console.log("Form data: ");
-    console.log(json);
 
     submitBtn.innerHTML = "กำลังส่งข้อมูล...";
     submitBtn.disabled = true;
