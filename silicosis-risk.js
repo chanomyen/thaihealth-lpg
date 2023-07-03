@@ -47,7 +47,7 @@ window.onload = async function () {
 function goToResultPage(level) {
     let baseUrl = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
     if (baseUrl.includes("github")) {
-        baseUrl = `${baseUrl}/thaihealth`;
+        baseUrl = `${baseUrl}/thaihealth-lpg`;
     }
     const nextPage = `${baseUrl}/result.html?level=${level}`;
     // console.log(nextPage);
