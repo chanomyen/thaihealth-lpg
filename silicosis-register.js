@@ -26,10 +26,10 @@ userRegisterForm.addEventListener('submit', async (event) => {
 
     formDataObject.homeAddress = document.getElementById("homeAddress").value;
 
-    formDataObject.cutStone = document.getElementById("cutStone").checked;
-    formDataObject.drilling = document.getElementById("drilling").checked;
-    formDataObject.carveStone = document.getElementById("carveStone").checked;
-    formDataObject.otherWorkTypeValue = otherWorkTypeValue;
+    formDataObject.cutStone = Number(document.getElementById("cutStone").checked);
+    formDataObject.drilling = Number(document.getElementById("drilling").checked);
+    formDataObject.carveStone = Number(document.getElementById("carveStone").checked);
+    formDataObject.otherWorkType = otherWorkTypeValue;
 
     formDataObject.lineId = lineProfile.userId;
     formDataObject.lineName = lineProfile.displayName;
@@ -116,7 +116,7 @@ window.onload = async function () {
         console.log("Logged In!");
     } else {
         console.log("Not logged In!");
-        liff.login();
+        // liff.login();
     }
 
     const profile = await liff.getProfile();
