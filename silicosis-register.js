@@ -116,7 +116,7 @@ window.onload = async function () {
         console.log("Logged In!");
     } else {
         console.log("Not logged In!");
-        // liff.login();
+        liff.login();
     }
 
     const profile = await liff.getProfile();
