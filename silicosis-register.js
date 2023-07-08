@@ -24,7 +24,7 @@ userRegisterForm.addEventListener('submit', async (event) => {
     const data = new FormData(userRegisterForm); // create a FormData object from the form inputs
     const formDataObject = Object.fromEntries(data);
 
-    formDataObject.homeAddress = document.getElementById("homeAddress").value;
+    // formDataObject.homeAddress = document.getElementById("homeAddress").value;
 
     formDataObject.cutStone = Number(document.getElementById("cutStone").checked);
     formDataObject.drilling = Number(document.getElementById("drilling").checked);
