@@ -31,10 +31,10 @@ userRegisterForm.addEventListener('submit', async (event) => {
     formDataObject.carveStone = Number(document.getElementById("carveStone").checked);
     formDataObject.otherWorkType = otherWorkTypeValue;
 
-    formDataObject.lineId = lineProfile.userId;
-    formDataObject.lineName = lineProfile.displayName;
-    // formDataObject.lineId = "";
-    // formDataObject.lineName = "";
+    // formDataObject.lineId = lineProfile.userId;
+    // formDataObject.lineName = lineProfile.displayName;
+    formDataObject.lineId = "";
+    formDataObject.lineName = "";
 
     console.log(formDataObject)
     const json = JSON.stringify(formDataObject); // convert the FormData object to a JSON string
@@ -54,7 +54,7 @@ userRegisterForm.addEventListener('submit', async (event) => {
             console.log('Success:', response);
             submitBtn.innerHTML = "เสร็จสิ้น";
             submitBtn.className = "btn btn-success btn-lg";
-            goToAssessmentPage();
+            // goToAssessmentPage();
             // handle the successful response from the server here
         })
         .catch(error => {
@@ -111,29 +111,29 @@ function goToAssessmentPage() {
 }
 
 window.onload = async function () {
-    console.log("On load!!!")
-    loadLIFF();
-    await liff.init({ liffId: "2000015305-b6e21554" });
-    if (liff.isLoggedIn()) {
-        console.log("Logged In!");
-    } else {
-        console.log("Not logged In!");
-        liff.login();
-    }
+    // console.log("On load!!!")
+    // loadLIFF();
+    // await liff.init({ liffId: "2000015305-b6e21554" });
+    // if (liff.isLoggedIn()) {
+    //     console.log("Logged In!");
+    // } else {
+    //     console.log("Not logged In!");
+    //     liff.login();
+    // }
 
-    const profile = await liff.getProfile();
-    lineProfile = profile;
-    console.log(lineProfile);
-    isRegisted(lineProfile.userId)
-        .then(data => {
-            console.log(data.exists);
-            if (data.exists) {
-                console.log("Go to next!");
-                goToAssessmentPage();
-            }
-        })
-        .catch((error) => {
-            console.log("Error");
-            console.error(error)
-        });
+    // const profile = await liff.getProfile();
+    // lineProfile = profile;
+    // console.log(lineProfile);
+    // isRegisted(lineProfile.userId)
+    //     .then(data => {
+    //         console.log(data.exists);
+    //         if (data.exists) {
+    //             console.log("Go to next!");
+    //             goToAssessmentPage();
+    //         }
+    //     })
+    //     .catch((error) => {
+    //         console.log("Error");
+    //         console.error(error)
+    //     });
 };
